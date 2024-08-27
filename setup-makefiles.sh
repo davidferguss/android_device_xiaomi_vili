@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2020 The LineageOS Project
-#
+# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -27,9 +27,9 @@ fi
 
 set -e
 
-# Required!
 export DEVICE=vili
 export DEVICE_COMMON=sm8350-common
 export VENDOR=xiaomi
+export VENDOR_COMMON=${VENDOR}
 
-"./../../${VENDOR}/${DEVICE_COMMON}/setup-makefiles.sh" "$@"
+"./../../${VENDOR_COMMON}/${DEVICE_COMMON}/setup-makefiles.sh" "$@"
