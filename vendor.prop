@@ -1,2 +1,7 @@
 # Bluetooth
 bluetooth.device.default_name=Xiaomi 11T Pro
+
+# Fingerprint
+persist.vendor.fingerprint.sensor_location=1080|915|200|local:4630946545580055170
+persist.vendor.fingerprint.type=side
+
