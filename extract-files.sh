@@ -12,9 +12,12 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i 's/=\([0-9]\+\)>/="\1">/g' "${2}"
             ;;
-        vendor/lib64/hw/camera.qcom.so)
+        vendor/lib64/hw/camera.qcom.so | vendor/lib64/libFaceDetectpp-0.5.2.so | vendor/lib64/libfacedet.so)
             [ "$2" = "" ] && return 0
             sed -i "s/\x73\x74\x5F\x6C\x69\x63\x65\x6E\x73\x65\x2E\x6C\x69\x63/\x63\x61\x6D\x65\x72\x61\x5F\x63\x6E\x66\x2E\x74\x78\x74/g" "${2}"
+            sed -i "s|libmegface.so|libfacedet.so|g" "${2}"
+            sed -i "s|libMegviiFacepp-0.5.2.so|libFaceDetectpp-0.5.2.so|g" "${2}"
+            sed -i "s|megviifacepp_0_5_2_model|facedetectpp_0_5_2_model|g" "${2}"
             ;;
         vendor/etc/camera/vili_motiontuning.xml)
             [ "$2" = "" ] && return 0
