@@ -4,18 +4,31 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from haydn device
+# Inherit from vili device
 $(call inherit-product, device/xiaomi/vili/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common SkylineUI stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+
+
+# Environment Flags
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+
+
+#Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080
+
 
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := vili
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := 2107113SG
-PRODUCT_NAME := lineage_vili
+PRODUCT_NAME := aosp_vili
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
